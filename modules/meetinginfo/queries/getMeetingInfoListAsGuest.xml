@@ -1,0 +1,18 @@
+<query id="getMeetinginfoListAsGuest" action="select">
+    <tables>
+        <table name="meeting_info" />
+    </tables>
+    <columns>
+        <column name="*" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="host_srl" var="host_srl" />
+        <condition operation="equal" column="guest_srl" var="guest_srl" pipe="and"/>
+    </conditions>
+    <navigation>
+        <index var="sort_index" default="regdate" order="desc" />
+        <list_count var="list_count" default="20" />
+        <page_count var="page_count" default="10" />
+        <page var="page" default="1" />
+    </navigation>
+</query>

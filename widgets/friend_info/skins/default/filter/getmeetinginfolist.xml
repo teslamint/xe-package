@@ -1,0 +1,12 @@
+<filter name="getmeetinginfolist" module="meetinginfo" act="getMeetinginfoListAsGuest">
+    <form />
+    <parameter />
+    <response callback_func="completeGetMeetingInfoList">
+        <tag name="error" />
+        <tag name="message" />
+        <tag name="guest_srl" />
+        <tag name="host_srl" />
+        <tag name="content" />
+        <tag name="output" />
+    </response>
+</filter>

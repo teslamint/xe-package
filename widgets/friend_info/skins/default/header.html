@@ -1,0 +1,14 @@
+<!--//%import("filter/update_geolocation.xml")-->
+<!--%import("filter/getmeetinginfolist.xml")-->
+<script type="text/javascript">//<![CDATA[
+friends_info = { "members": [
+{@$index=1}
+<!--@foreach($widget_info->geolocation as $key => $value)-->
+        { "member_srl": {$key}, "username": "{$user_info[$key]->user_name}",  "nickname": "{$user_info[$key]->nick_name}", "email_address": "{$user_info[$key]->email_address}", "join_date": "{getTimeGap($user_info[$key]->regdate)}", "last_login": "{getTimeGap($user_info[$key]->last_login)}", "homepage": "{$user_info[$key]->homepage}", "blog": "{$user_info[$key]->blog}", "birthday": "{$user_info[$key]->birthday}", "description": "{$user_info[$key]->description}", "latlng": new GLatLng({$value}) }<!--@if($index < count($widget_info->geolocation))-->,
+<!--@end-->
+{@$index++}
+<!--@end-->
+
+    ]
+};
+//]]></script>

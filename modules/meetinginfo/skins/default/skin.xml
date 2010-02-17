@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">미팅 정보 기본 스킨</title>
+    <title xml:lang="en">Meeting Information Default Skin</title>
+    <description xml:lang="ko">미팅 정보를 작성할 때 사용하는 기본 스킨입니다.</description>
+    <description xml:lang="en">Default skin for writing meeting information.</description>
+    <version>0.1.2</version>
+    <date>2010-01-20</date>
+    <link>http://ice.tguum.kr</link>
+
+    <history version="0.1.1" date="2010-01-18">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ 스마트폰용 정보입력 페이지 추가</log>
+        <log>+ 관리자 페이지에서 스킨 선택 항목 추가</log>
+    </history>
+    <history version="0.1.2" date="2010-01-20">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ 관리자 페이지에서 미팅 정보 삭제 가능</log>
+    </history>
+
+    <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+        <name xml:lang="ko">teslamint</name>
+        <name xml:lang="en">teslamint</name>
+    </author>
+</skin>

@@ -1,0 +1,8 @@
+<query id="deleteMeetingInformations" action="delete">
+    <tables>
+        <table name="meeting_info" />
+    </tables>
+    <conditions>
+        <condition operation="in" column="message_srl" var="message_srls" notnull="notnull" />
+    </conditions>
+</query>

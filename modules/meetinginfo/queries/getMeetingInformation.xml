@@ -1,0 +1,11 @@
+<query id="getMeetingInformation" action="select">
+    <tables>
+        <table name="meeting_info" />
+    </tables>
+    <columns>
+        <column name="*" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="message_srl" var="message_srl" notnull="notnull" />
+    </conditions>
+</query>

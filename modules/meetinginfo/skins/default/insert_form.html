@@ -1,0 +1,40 @@
+<!--%import("js/meetinginfo.js")-->
+<!--%import("filter/insert_info.xml")-->
+<div id="popHeader" class="wide">
+    <h3 class="xeAdmin">{$lang->cmd_writing_info}</h3>
+</div>
+
+<form id="fo_insert_form" action="./" method="get" onsubmit="return procFilter(this, insert_info)">
+<input type="hidden" name="host_srl" value="{$host->member_srl}" />
+<input type="hidden" name="guest_srl" value="{$guest->member_srl}" />
+<input type="hidden" name="content" value="" />
+
+<div id="popBody">
+
+<h4 class="xeAdmin">{$lang->cmd_writing_info}</h4>
+    <table cellspacing="0" class="rowTable">
+    <tr>
+        <th scope="row"><div>{$lang->meeting_host}</div></th>
+        <td class="wide">{$host->nick_name} ({$host->user_id})</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->participants}</div></th>
+        <td class="wide">{$guest->nick_name} ({$guest->user_id})</td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->cmd_send_message}</div></th>
+        <td class="wide"><label><input type="checkbox" name="sender_log" value="Y" <!--@if($config->default_onlyme =='N')-->checked<!--@end--> /> {$lang->notify}</label></td>
+    </tr>
+    <tr>
+        <th scope="row"><div>{$lang->content}</div></th>
+        <td>
+            {$editor}
+        </td>
+    </tr>
+</table>
+</div>
+
+<div id="popFooter">
+    <span class="button black strong"><input type="submit" value="{$lang->cmd_save_info}" /></span>
+</div>
+</form>

@@ -1,0 +1,12 @@
+<!--%load_js_plugin("ui")-->
+
+<h3 class="xeAdmin">{$lang->meetinginfo} <span class="gray">{$lang->cmd_management}</span></h3>
+
+<div class="infoText">{nl2br($lang->about_meetinginfo)}</div>
+
+<div class="header4">
+    <ul class="localNavigation">
+        <li <!--@if($act=='dispMeetinginfoAdminIndex')-->class="on"<!--@end-->><a href="{getUrl('act','dispMeetinginfoAdminIndex')}">{$lang->cmd_module_config}</a></li>
+        <li <!--@if($act=='dispMeetinginfoAdminMessages')-->class="on"<!--@end-->><a href="{getUrl('act','dispMeetinginfoAdminMessages','member_srl','')}">{$lang->cmd_meetinginfo_list}</a></li>
+    </ul>
+</div>

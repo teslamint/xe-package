@@ -1,0 +1,12 @@
+<query id="updateMeetingInformation" action="update">
+    <tables>
+        <table name="meeting_info" />
+    </tables>
+    <columns>
+        <column name="guest_srl" var="guest_srl" notnull="notnull" />
+        <column name="content" var="content" notnull="notnull" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="message_srl" var="message_srl" notnull="notnull" />
+    </conditions>
+</query>

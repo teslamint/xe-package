@@ -1,0 +1,11 @@
+<script type="text/javascript">
+if(navigator.geolocation) getLocation();
+xAddEventListener(window, "load", function(){
+    xe.lang.add_meeting_info='{$lang->add_meeting_info}';
+    xe.lang.nick_name='{$lang->nick_name}';
+    xe.lang.geolocation='{$lang->geolocation}';
+    xe.lang.no_meeting_info = '{$lang->no_meeting_info}';
+    friends_map = init(friends_map, xGetElementById("friends_map_canvas"), friends_info.members)
+});
+xAddEventListener(window, "unload", function(){GUnload()});
+</script>

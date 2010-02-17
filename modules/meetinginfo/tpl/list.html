@@ -1,0 +1,56 @@
+<!--#include("header.html")-->
+<!--%import("js/meetinginfo_admin.js")-->
+<!--%import("filter/delete_msg_all.xml")-->
+
+<!-- 목록 -->
+<form name="fo_info" method="get" action="./" onsubmit="return procFilter(this, delete_msg_all)">
+<input type="hidden" name="page" value="{number_format($page)}">
+<table cellspacing="0" class="rowTable clear">
+<caption>Total {number_format($total_count)}, Page {number_format($page)}/{number_format($total_page)}</caption>
+<thead>
+    <tr>
+        <th scope="col"><div>{$lang->no}</div></th>
+        <th scope="col"><div><input type="checkbox" onclick="XE.checkboxToggleAll(); return false;"/></div></th>
+        <th scope="col" class="wide"><div>{$lang->content}</div></th>
+        <th scope="col"><div>{$lang->meeting_host}</div></th>
+        <th scope="col"><div>{$lang->participants}</div></th>
+        <th scope="col"><div>{$lang->regdate}</div></th>
+    </tr>
+</thead>
+<tbody>
+    <!--@foreach($information_list as $no => $oInfo)-->
+    <tr>
+        <td class="number center">{$oInfo->message_srl}</td>
+        <td><input type="checkbox" name="cart[]" value="{$oInfo->message_srl}"/></td>
+        <td class="left content wide">{htmlspecialchars($oInfo->content)}
+        </td>
+        {@
+            $host = $oMemberModel->getMemberInfoByMemberSrl($oInfo->host_srl);
+            $guest = $oMemberModel->getMemberInfoByMemberSrl($oInfo->guest_srl);
+        }
+        <td class="nowrap"><span class="member_{$oInfo->host_srl}">{$host->nick_name}</span></td>
+        <td class="nowrap"><span class="member_{$oInfo->guest_srl}">{$guest->nick_name}</span></td>
+        <td class="date center nowrap">{zdate($oInfo->regdate)}</td>
+    </tr>
+    <!--@end-->
+</tbody>
+</table>
+<!-- 버튼 -->
+<div class="clear">
+    <div class="fl">
+        <span class="button red strong"><input type="submit" value="{$lang->cmd_delete}" /></span>
+    </div>
+</div>
+<!-- 페이지 네비게이션 -->
+<div class="pagination a1">
+    <a href="{getUrl('page',$page_navigation->first_page,'module_srl','')}" class="prevEnd">{$lang->first_page}</a> 
+    <!--@while($page_no = $page_navigation->getNextPage())-->
+        <!--@if($page == $page_no)-->
+            <strong>{$page_no}</strong> 
+        <!--@else-->
+            <a href="{getUrl('page',$page_no,'module_srl','')}">{$page_no}</a> 
+        <!--@end-->
+    <!--@end-->
+    <a href="{getUrl('page',$page_navigation->last_page,'module_srl','')}" class="nextEnd">{$lang->last_page}</a>
+</div>
+</form>

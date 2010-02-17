@@ -1,0 +1,19 @@
+<!--%import("../js/meetinginfo.js")-->
+<!--%import("../filter/insert_info.xml")-->
+<div class="smartPhoneTitleBar">
+    <h1>{$lang->cmd_writing_info}</h3>
+</div>
+
+<div class="smartPhoneContent">
+    <form id="fo_insert_form" action="./" method="get" onsubmit="return procFilter(this, insert_info)"><input type="hidden" name="host_srl" value="{$host->member_srl}" /><input type="hidden" name="guest_srl" value="{$guest->member_srl}" /><input type="hidden" name="content" value="" />
+    <ul class="item">
+        <li>{$lang->meeting_host}: {$host->nick_name} ({$host->user_id})</li>
+        <li>{$lang->participants}: {$guest->nick_name} ({$guest->user_id})</li>
+        <li>{$lang->cmd_send_message}: <input type="checkbox" name="sender_log" value="Y" <!--@if($config->default_onlyme =='N')-->checked<!--@end--> /></li>
+        <li>
+            <textarea id="content" name="content" cols="40" rows="6" style="width: 95%"></textarea>
+        </li>
+    </ul>
+    <input class="smartPhoneBtn" type="submit" value="{$lang->cmd_save_info}" style="width: 95%;" />
+    </form>
+</div>

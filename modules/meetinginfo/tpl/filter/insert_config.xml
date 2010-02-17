@@ -1,0 +1,16 @@
+<filter name="insert_config" module="meetinginfo" act="procMeetinginfoAdminSetConfig" confirm_msg_code="confirm_submit">
+    <form>
+        <node target="title_header" required="true" minlength="6" maxlength="24" />
+        <node target="default_onlyme" required="true" minlength="1" maxlength="1" />
+        <node target="skin" required="true" minlength="1" />
+    </form>
+    <parameter>
+        <param name="title_header" target="title_header" />
+        <param name="default_onlyme" target="default_onlyme" />
+        <param name="skin" target="skin" />
+    </parameter>
+    <response callback_func="completeUpdateConfig">
+        <tag name="error" />
+        <tag name="message" />
+    </response>
+</filter>

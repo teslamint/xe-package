@@ -1,0 +1,9 @@
+<query id="deleteCallingItem" action="delete">
+    <tables>
+        <table name="planet_calling" />
+    </tables>
+    <conditions>
+        <condition operation="equal" column="module_srl" var="module_srl" notnull="notnull" />
+        <condition operation="equal" column="document_srl" var="document_srl" notnull="notnull" pipe="and" />
+    </conditions>
+</query>

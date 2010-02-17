@@ -1,0 +1,18 @@
+    <select name="friend_idx" style="width: 100%;" onchange="var f=this.form;f.guest_srl.value=friends_info.members[this.value].member_srl;procFilter(f, getmeetinginfolist);
+dispFriendsInfo(friends_map, friends_info, this.value); return false;">
+        <option selected="selected" value="0">{$lang->select_friends}</option>
+    {@$index=0}
+    <!--@foreach($widget_info->geolocation as $key => $value)-->
+            <option value="{$index}" >{$user_info[$key]->nick_name}</option>
+    {@$index++}
+    <!--@end-->
+    </select>
+    <h3>{$lang->basic_info}</h3>
+    <div id="friendsBasicInfoContainer">
+    </div>
+    <a class="button green" href="#friends_map_canvas" onclick="toggle('friendsDetailInfoContainer')"><span>{$lang->detail_info}</span></a>
+    <div id="friendsDetailInfoContainer">
+    </div>
+    <a class="button red" href="#friends_map_canvas" onclick="toggle('friendsMeetingInfoContainer')"><span>{$lang->meeting_info}</span></a>
+    <div id="friendsMeetingInfoContainer" style="word-wrap: break-word;">
+    </div>

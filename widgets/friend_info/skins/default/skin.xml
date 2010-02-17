@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">친구 위치정보 기본 스킨</title>
+    <title xml:lang="en">Friend's Geolocation Default Skin</title>
+    <description xml:lang="ko">친구 위치정보를 출력하는 기본 스킨입니다.</description>
+    <description xml:lang="en">Default skin for shows friend's geolocation.</description>
+    <version>0.2.1</version>
+    <date>2010-01-15</date>
+    <link>http://ice.tguum.kr</link>
+
+    <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+        <name xml:lang="ko">teslamint</name>
+        <name xml:lang="en">teslamint</name>
+    </author>
+    <history version="0.1.1" date="2009-12-28">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>* 친구 그룹 가져올 때 닉네임도 같이 가져옴.</log>
+        <log>+ 마커를 클릭하면 닉네임이 나오고, 닉네임을 클릭하면 회원 메뉴가 뜸.</log>
+        <log>- 확장 변수 가져오는 쿼리 제거</log>
+    </history>
+    <history version="0.1.2" date="2009-12-29">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ reverse geocoding을 위해 JSON.php, json2_*.js 추가</log>
+        <log>+ reverse geocoding (very buggy)</log>
+    </history>
+    <history version="0.1.3" date="2009-12-30">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>* JSON.php, json2_*.js 제거 (필요 없음)</log>
+        <log>* 위치 변환은 구글지도 API에서 제공하는 GClientGeocoder() 클래스를 이용함.</log>
+        <log>* javascript code diet.</log>
+    </history>
+    <history version="0.1.4" date="2009-12-31">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>* 자바스크립트 부분을 skins/default/js/common.js 로 이동.</log>
+        <log>+ 회원 및 친구의 정보를 array에 넣어 사용. </log>
+    </history>
+    <history version="0.1.5" date="2010-01-04">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ 지도 옆에 닉네임을 클릭하면 해당 회원의 마커로 이동</log>
+    </history>
+    <history version="0.1.6" date="2010-01-05">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ 지도 옆에 닉네임을 클릭하면 간단한 회원 정보가 뜸</log>
+    </history>
+    <history version="0.1.6.1" date="2010-01-06">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>* 지도가 사라지는 문제 수정.</log>
+    </history>
+    <history version="0.1.7" date="2010-01-07">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ 회원의 기본 정보 외에 세부 정보, 미팅 정보(미구현)를 볼 수 있도록 추가함.</log>
+    </history>
+    <history version="0.1.8" date="2010-01-08">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>* 회원 정보 표시 루틴 개선.</log>
+    </history>
+    <history version="0.1.8.1" date="2010-01-11">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ packer로 압축한 common.packed.js 추가.</log>
+        <log>* 자바스크립트 함수 dispFriendsInfo() 이동.</log>
+    </history>
+    <history version="0.1.8.2" date="2010-01-12">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>- packer로 압축한 common.packed.js 삭제.</log>
+    </history>
+    <history version="0.1.9" date="2010-01-12">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ 스마트폰용 페이지 추가.</log>
+    </history>
+    <history version="0.2.0" date="2010-01-14">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ 구글 지도 API v3 용 JS 파일 추가. (아직 사용 안 함)</log>
+        <log>+ 언어 파일 추가</log>
+        <log>+ 위치 정보 업데이트하는 XML 필터 추가 (아직 동작 안 함)</log>
+        <log>- 불필요한 JavaScript 코드 제거</log>
+    </history>
+    <history version="0.2.1" date="2010-01-15">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ 미팅 정보 입력하는 기능 추가. (출력에서는 아직 날짜 처리가 안 됨)</log>
+        <log>* 스킨에서 헤더와 푸터, 회원 정보 출력 부분 분리</log>
+    </history>
+    <history version="0.2.2" date="2010-01-18">
+        <author email_address="teslamint+xe@gmail.com" link="http://ice.tguum.kr">
+            <name xml:lang="ko">teslamint</name>
+            <name xml:lang="en">teslamint</name>
+        </author>
+        <log>+ r60에서 제거했던 자바스크립트 코드 다시 적용(날짜 처리를 위해서)</log>
+        <log>* 스마트폰에서 미팅정보 조회가 안 되는 문제 수정</log>
+        <log>* 스마트폰에서 특정 조건에서 미팅 정보 입력 페이지가 보이지 않는 현상 수정</log>
+        <log>* 마우스를 미팅 내용에 갖다 대면 입력 날짜가 보이도록 수정</log>
+    </history>
+
+</skin>

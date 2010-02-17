@@ -1,0 +1,45 @@
+<!--%import("filter/insert_config.xml")-->
+<!--%import("js/meetinginfo_admin.js")-->
+<!--#include('header.html')-->
+<form action="./" method="get" onsubmit="return procFilter(this, insert_config)">
+<table cellspacing="0" class="rowTable">
+<tr class="row2">
+    <th scope="row"><div>{$lang->title_header}</div></th>
+    <td>
+        <input type="text" name="title_header" value="{$config->title_header}" size="20" class="inputTypeText lang_code" id="title_header" />
+        <p>{$lang->about_title_header}</p>
+    </td>
+</tr>
+<tr>
+    <th scope="row"><div>{$lang->default_onlyme}</div></th>
+    <td>
+        <select name="default_onlyme">
+            <option value="N"<!--@if($config->default_onlyme=='N')--> selected="selected"<!--@end-->>{$lang->notuse}</option>
+            <option value="Y"<!--@if($config->default_onlyme=='Y')--> selected="selected"<!--@end-->>{$lang->use}</option>
+        </select>
+        <p>{$lang->about_default_onlyme}</p>
+    </td>
+</tr>
+<tr class="row2">
+    <th scope="row"><div>{$lang->skin}</div></th>
+    <td>
+        <select name="skin">
+        <!--@foreach($skin_list as $key=>$value)-->
+            <option value="{$key}" <!--@if($config->skin==$key or (!$config->skin and $key=='default'))-->selected="selected"<!--@end-->>{$value->title}</option>
+        <!--@end-->
+        </select>
+        <p>{$lang->about_skin}</p>
+    </td>
+</tr>
+</table>
+    <table cellspacing="0" class="rowTable">
+    <tbody>
+    <tr>
+        <th class="button">
+            <span class="button black strong"><input type="submit" value="{$lang->cmd_submit}" accesskey="s" /></span>
+            <a href="{getUrl('act','dispMeetinginfoAdminIndex')}" class="button"><span>{$lang->cmd_cancel}</span></a>
+        </td>
+    </tr>
+    </tbody>
+    </table>
+</form>

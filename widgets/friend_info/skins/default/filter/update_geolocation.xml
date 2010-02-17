@@ -1,0 +1,10 @@
+<filter name="update_geolocation" module="member" act="procMemberUpdateInfo">
+    <form />
+        <node target="geolocation" notnull="notnull" />
+    </form>
+    <parameter/>
+    <response callback_func="completeUpdateGeolocation">
+        <tag name="error" />
+        <tag name="message" />
+    </response>
+</filter>

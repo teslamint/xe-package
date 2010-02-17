@@ -1,0 +1,7 @@
+<filter name="delete_msg_all" module="meetinginfo" act="procMeetinginfoAdminDeleteAll" confirm_msg_code="confirm_delete">
+    <response callback_func="completeDelete">
+        <tag name="error" />
+        <tag name="message" />
+        <tag name="page" />
+    </response>
+</filter>

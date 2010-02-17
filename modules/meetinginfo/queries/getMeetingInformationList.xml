@@ -1,0 +1,23 @@
+<query id="getMeetingInformationList" action="select">
+    <tables>
+        <table name="meeting_info" alias="meeting_info"/>
+        <table name="member" alias="member" />
+    </tables>
+    <columns>
+        <column name="meeting_info.*" />
+        <column name="member.user_id" />
+        <column name="member.member_srl" />
+        <column name="member.nick_name" />
+        <column name="member.user_name" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="meeting_info.host_srl" var="member_srl" />
+        <condition operation="equal" column="meeting_info.guest_srl" var="member.member_srl" pipe="and"/>
+    </conditions>
+    <navigation>
+        <index var="sort_index" default="meeting_info.regdate" order="desc" />
+        <list_count var="list_count" default="20" />
+        <page_count var="page_count" default="10" />
+        <page var="page" default="1" />
+    </navigation>
+</query>

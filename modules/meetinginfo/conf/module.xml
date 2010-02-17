@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <grants />
+    <permissions />
+    <actions>
+        <action name="dispMeetinginfoAdd" type="view" standalone="true" />
+        <action name="dispMeetinginfoAdminIndex" type="view" admin_index="true" standalone="true" />
+        <action name="dispMeetinginfoAdminMessages" type="view" standalone="true" />
+
+        <action name="getMeetinginfoListAsGuest" type="model" standalone="true" />
+        <action name="getMeetinginfoListAsHost" type="model" standalone="true" />
+
+        <action name="procMeetinginfoAdd" type="controller" standalone="true" />
+        <action name="procMeetinginfoDelete" type="controller" standalone="true" />
+        <action name="procMeetinginfoAdminSetConfig" type="controller" standalone="true" />
+        <action name="procMeetinginfoAdminDeleteAll" type="controller" standalone="true" />
+    </actions>
+</module>

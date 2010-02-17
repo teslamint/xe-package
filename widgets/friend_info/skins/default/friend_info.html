@@ -1,0 +1,13 @@
+<!--%import("js/common.js")-->
+<!--#include("header.html")-->
+<div class="widgetContainer" id="friends_map_canvas" style="width: 70%; height: {$widget_info->map_height}px; float: left;">
+</div>
+<form name="update_geolocation" action="{geturl()}" method="post" onsubmit="updateit(this); return procFilter(this, update_geolocation);">
+<input type="hidden" name="guest_srl" value="" />
+<input type="hidden" name="geolocation" value="{$widget_info->geolocation[$logged_info->member_srl]}" />
+<div class="widgetContainer" style="float: left; width: 30%; height: {$widget_info->map_height}px; overflow: auto;">
+<!--#include("memberInfoContainer.html")-->
+</div>
+<!--//<span class="button black strong"><input type="submit" value="{$lang->update_geolocation}" /></span>-->
+</form>
+<!--#include("footer.html")-->

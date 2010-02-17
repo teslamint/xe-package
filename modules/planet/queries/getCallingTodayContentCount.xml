@@ -1,0 +1,13 @@
+<query id="getCallingTodayContentCount" action="select">
+    <tables>
+        <table name="planet_calling" />
+    </tables>
+    <columns>
+        <column name="count(*)" alias="count" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="module_srl" var="module_srl" />
+        <condition operation="like_prefix" column="regdate" var="regdate" pipe="and" />
+    </conditions>
+</query>
+
