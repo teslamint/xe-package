@@ -47,7 +47,7 @@
             // 2009. 01. 29 아이디 클릭시 나타나는 팝업메뉴에 플래닛 보기 기능 추가
             $oModuleController->insertTrigger('member.getMemberMenu', 'planet', 'controller', 'triggerMemberMenu', 'after');
 
-            // 2009. 05. 07 개별 플래닛에서 메인 플래닛의 레이아웃을 승계하기 위한 트리거 추가 
+            // 2009. 05. 07 개별 플래닛에서 메인 플래닛의 레이아웃을 승계하기 위한 트리거 추가
             $oModuleController->insertTrigger('moduleHandler.init', 'planet', 'controller', 'triggerSetLayout', 'after');
         }
 
@@ -60,8 +60,14 @@
             // 2009. 01. 29 아이디 클릭시 나타나는 팝업메뉴에 플래닛 보기 기능 추가
             if(!$oModuleModel->getTrigger('member.getMemberMenu', 'planet', 'controller', 'triggerMemberMenu', 'after')) return true;
 
-            // 2009. 05. 07 개별 플래닛에서 메인 플래닛의 레이아웃을 승계하기 위한 트리거 추가 
+            // 2009. 05. 07 개별 플래닛에서 메인 플래닛의 레이아웃을 승계하기 위한 트리거 추가
             if(!$oModuleModel->getTrigger('moduleHandler.init', 'planet', 'controller', 'triggerSetLayout', 'after')) return true;
+
+            // 2010. 02. 23 트위터 패치
+            $oDB = &DB::getInstance();
+            if(!$oDB->isColumnExists('planet', 'twitter_uid')) return true;
+            if(!$oDB->isColumnExists('planet', 'twitter_authkey')) return true;
+            if(!$oDB->isColumnExists('planet', 'twitter_autopush')) return true;
 
             return false;
         }
@@ -74,12 +80,21 @@
             $oModuleController = &getController('module');
 
             // 2009. 01. 29 아이디 클릭시 나타나는 팝업메뉴에 플래닛 보기 기능 추가
-            if(!$oModuleModel->getTrigger('member.getMemberMenu', 'planet', 'controller', 'triggerMemberMenu', 'after')) 
+            if(!$oModuleModel->getTrigger('member.getMemberMenu', 'planet', 'controller', 'triggerMemberMenu', 'after'))
                 $oModuleController->insertTrigger('member.getMemberMenu', 'planet', 'controller', 'triggerMemberMenu', 'after');
 
-            // 2009. 05. 07 개별 플래닛에서 메인 플래닛의 레이아웃을 승계하기 위한 트리거 추가 
+            // 2009. 05. 07 개별 플래닛에서 메인 플래닛의 레이아웃을 승계하기 위한 트리거 추가
             if(!$oModuleModel->getTrigger('moduleHandler.init', 'planet', 'controller', 'triggerSetLayout', 'after'))
                 $oModuleController->insertTrigger('moduleHandler.init','planet','controller','triggerSetLayout', 'after');
+
+            // 2010. 02. 23 트위터 패치
+            $oDB = &DB::getInstance();
+            if(!$oDB->isColumnExists('planet', 'twitter_uid'))
+                $oDB->addColumn('planet', 'twitter_uid', 'varchar', 40, NULL);
+            if(!$oDB->isColumnExists('planet', 'twitter_authkey'))
+                $oDB->addColumn('planet', 'twitter_authkey', 'varchar', 40, NULL);
+            if(!$oDB->isColumnExists('planet', 'twitter_autopush'))
+                $oDB->addColumn('planet', 'twitter_autopush', 'varchar', 1, N, true);
 
             return new Object(0, 'success_updated');
         }
